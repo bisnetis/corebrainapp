@@ -1,0 +1,127 @@
+/*
+ * Please see the included README.md file for license terms and conditions.
+ */
+
+
+/* This file is completely optional and not required. */
+/* Note the reference that includes it in the index.html file. */
+
+
+/* Disable certain interactions on touch devices */
+/* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
+/* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
+body {
+    -webkit-touch-callout: none ;
+    -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
+    -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;
+    -webkit-highlight: none ;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) ;
+    -webkit-tap-highlight-color: transparent ;      /* For some Androids */
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+html {
+    -ms-touch-action: pan-x ;
+    background-color: #fff;
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+body {
+    -ms-touch-action: pan-y ;
+    -ms-content-zooming: none ;
+    background-color: #fff;
+}
+
+/* allow copy-paste */
+input, textarea  {
+    -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
+}
+
+body {
+    /* margin: 0.5rem ; */
+    color: white ;
+}
+
+.purple-bg {
+    background-color: rgb(163, 80, 191);
+}
+
+.light-purple-bg {
+    background-color: rgb(226, 125, 255);
+}
+
+#login_screen {
+    /*background-color: rgb(163, 80, 191);*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#login_screen img {
+    max-width: 270px;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-box {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    padding: 15px;
+    color: #000;
+}
+
+.main-nav {
+    background-color: #7f7f7f;
+    border-color: #a3a3a3;
+    color: #fff;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+}
+
+.navbar-brand {
+    overflow-y: hidden;
+    padding: 0;
+}
+
+.navbar-brand > img {
+    height: 50px;
+    display: inline;
+}
+
+#main_screen {
+    padding-top: 60px;
+}
+
+.panel-body {
+    color: #000;
+}
+
+.panel-body iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    margin-bottom: 10px;
+    /*display: none;*/
+}
+
+.panel-default>.panel-heading {
+    background-color: #7f7f7f;
+    border-color: #a3a3a3;
+    color: #fff;
+}

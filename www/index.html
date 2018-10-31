@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+<head>
+    <title>CorebrainDevelopment App</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="js/client.module.js"></script>
+    <script src="js/exercise.module.js"></script>
+    <script src="js/general.module.js"></script>
+</head>
+
+
+<body>
+    
+    <!-- ***VIEWS START*** -->
+    <div id="login_screen">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <br><img src="images/sitelogo.jpg" class="img-responsive text-center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3 login-box">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" onkeypress="generalbot.checkSignin(event);">
+                    </div>
+                    <button class="btn btn-block btn-primary" onclick="generalbot.signIn();" id="login_button">Sign in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="main_screen" class="hide">
+        <nav class="navbar navbar-default navbar-fixed-top main-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" id="mobile-nav-button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="images/sitelogo.jpg">
+                        CoreBrainDevelopment
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" onClick="exercisebot.getExercises();">My Exercises</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12" id="module_content">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***VIEWS END*** -->
+    
+    <!-- ***TEMPLATES START*** -->
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    </div>
+    <!-- ***TEMPLATES END*** -->
+	<script>
+        var debug = ""; 
+        var ajxURL = "https://www.corebraindevelopment.com/cms/appindex.php?callback=?";
+        var siteURL = "https://www.corebraindevelopment.com";
+		var version = "v1.0.4";
+	</script>
+</body>
+</html>
