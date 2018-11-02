@@ -24,7 +24,7 @@ var generalbot = {
                     clientbot.email = json[0]['email'];
                     
                     generalbot.loginState = 1;
-                    
+                    $('#client_name']).html(clientbot.firstname + " " + clientbot.lastname);
                     $home.removeClass('hide');
                     exercisebot.getExercises();
                     $screen.fadeOut();
