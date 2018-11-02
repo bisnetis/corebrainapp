@@ -5,19 +5,23 @@ var exercisebot = {
 		if($('#mobile-nav-button').attr('aria-expanded')){
 			$('#mobile-nav-button').click();
 		}
-        $.getJSON(
-			ajxURL,
-			{
+        $.ajax({
+			url: ajxURL,
+			type: "GET",
+			date: {
                 'do' : "get_exercises",
                 'client_id' : clientbot.id
             },
-            function (result) {
+            success: function (result) {
                 //console.log(result);
 				result = JSON.stringify(result);
                 exercisebot.showHome(JSON.parse(result));
                 
+            },
+            error : function (req, txtStatus, err) {
+                console.log('[NOTICE] Error fetching user information from server [STATUS:' + txtStatus + '] [ERROR:' + err + ']'); 
             }
-        );
+        });
     },
     
     showHome : function (exercises=0) {
@@ -54,16 +58,17 @@ var exercisebot = {
         
         exercisebot.current_id = $context.attr('exercise-id');
         
-        $.getJSON(
-			ajxURL,
-            {
+        $.ajax({
+			url: ajxURL,
+			type: "POST",
+            date: {
                 'do' : "complete_exercise",
                 'client_id' : clientbot.id,
                 'exercise_id' : $context.attr('exercise-id'),
                 'difficulty' : $exercise_panel.find('select[name=difficulty]').val(),
                 'feedback' : $exercise_panel.find('textarea[name=feedback]').val()
             },
-            function (result) {
+            success: function (result) {
 				console.log(result);
 				result = JSON.stringify(result);
                 result = JSON.parse(result);
@@ -74,8 +79,11 @@ var exercisebot = {
                 } else {
                     alert("Your exercise feedback could not be saved - please contact support");
                 }
+            },
+            error : function (req, txtStatus, err) {
+                console.log('[NOTICE] Error fetching user information from server [STATUS:' + txtStatus + '] [ERROR:' + err + ']'); 
             }
-        );
+        });
         
     }
 };
