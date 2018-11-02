@@ -14,7 +14,7 @@ var generalbot = {
                 'password' : $screen.find('input[name=password]').val()
             },
             success: function (result) {
-				console.log(result);
+				//console.log(result);
                 var json = JSON.parse(result);
                 //console.log(json);
                 if (typeof json.result === 'undefined') {
@@ -28,7 +28,7 @@ var generalbot = {
                     $home.removeClass('hide');
                     exercisebot.getExercises();
                     $screen.fadeOut();
-					console.log(clientbot);
+					//console.log(clientbot);
                 } else {
                     alert('Incorrect login credentials - please try again.');
                 }
