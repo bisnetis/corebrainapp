@@ -13,7 +13,7 @@ var exercisebot = {
                 'client_id' : clientbot.id
             },
             success: function (result) {
-                console.log(result);
+                //console.log(result);
 				//result = JSON.stringify(result);
                 exercisebot.showHome(JSON.parse(result));
                 
@@ -69,7 +69,7 @@ var exercisebot = {
                 'feedback' : $exercise_panel.find('textarea[name=feedback]').val()
             },
             success: function (result) {
-				console.log(result);
+				//console.log(result);
 				//result = JSON.stringify(result);
                 result = JSON.parse(result);
                 
