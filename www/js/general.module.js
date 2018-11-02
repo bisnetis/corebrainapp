@@ -5,16 +5,16 @@ var generalbot = {
         var $screen = $('#login_screen');
         var $home = $('#main_screen');
         
-        $.getJSON(
-			ajxURL,
-			{
+        $.ajax({
+			url: ajxURL,
+			type: "POST",
+			data:  {
                 'do' : "sign_in",
                 'email' : $screen.find('input[name=email]').val(),
                 'password' : $screen.find('input[name=password]').val()
             },
-            function (result) {
-				//console.log(result);
-				result = JSON.stringify(result);
+            success: function (result) {
+				console.log(result);
                 var json = JSON.parse(result);
                 //console.log(json);
                 if (typeof json.result === 'undefined') {
@@ -33,8 +33,11 @@ var generalbot = {
                     alert('Incorrect login credentials - please try again.');
                 }
                 
+            },
+        	error : function (req, txtStatus, err) {
+                console.log('[NOTICE] Error fetching user information from server [STATUS:' + txtStatus + '] [ERROR:' + err + ']'); 
             }
-        );
+        }); 
         
     },
     
