@@ -8,13 +8,13 @@ var exercisebot = {
         $.ajax({
 			url: ajxURL,
 			type: "GET",
-			date: {
+			data: {
                 'do' : "get_exercises",
                 'client_id' : clientbot.id
             },
             success: function (result) {
-                //console.log(result);
-				result = JSON.stringify(result);
+                console.log(result);
+				//result = JSON.stringify(result);
                 exercisebot.showHome(JSON.parse(result));
                 
             },
@@ -61,7 +61,7 @@ var exercisebot = {
         $.ajax({
 			url: ajxURL,
 			type: "POST",
-            date: {
+            data: {
                 'do' : "complete_exercise",
                 'client_id' : clientbot.id,
                 'exercise_id' : $context.attr('exercise-id'),
@@ -70,7 +70,7 @@ var exercisebot = {
             },
             success: function (result) {
 				console.log(result);
-				result = JSON.stringify(result);
+				//result = JSON.stringify(result);
                 result = JSON.parse(result);
                 
                 if (typeof result.affected !== 'undefined' && result.affected === true) {
